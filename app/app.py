@@ -3,7 +3,6 @@ import yfinance as yf
 
 app = Flask(__name__)
 
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     stock_data = None
@@ -25,7 +24,6 @@ def index():
                 error = f"Error fetching data: {e}"
 
     return render_template("index.html", stock_data=stock_data, error=error)
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000,debug=False)

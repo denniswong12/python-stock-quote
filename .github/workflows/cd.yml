@@ -1,4 +1,4 @@
-name: Run Container on EC2
+name: CD for Python Stock Quote
 
 on:
   push:
