@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Quote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Stock Quote App</h2>
+    <form method="POST">
+        <input type="text" name="symbol" placeholder="Enter stock symbol" required>
+        <button type="submit">Get Quote</button>
+    </form>
+
+    {% if stock_data %}
+    <h3>Stock: {{ stock_data.name }} ({{ stock_data.symbol }})</h3>
+    <p>Price: {{ stock_data.price }} {{ stock_data.currency }}</p>
+    <p>Previous Close: {{ stock_data.previous_close }}</p>
+    <p>This is a demo webpage; the data displayed may not be accurate.</p>
+    {% endif %}
+
+    {% if error %}
+    <p class="error">{{ error }}</p>  <!-- Add error class for styling -->
+    {% endif %}
+</body>
+</html>
