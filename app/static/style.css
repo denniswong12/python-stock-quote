@@ -1,0 +1,46 @@
+/* style.css */
+
+/* Style the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style for the form */
+form {
+    margin-bottom: 20px;
+}
+
+/* Style for the input and button */
+input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the error message */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Style for headings */
+h2, h3 {
+    color: #333;
+}
