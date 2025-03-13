@@ -10,6 +10,9 @@ This repository includes GitHub workflows for the CI/CD of a simple stock quote 
 ## Development Workflow  
 The `main` branch is protected, requiring all code changes to go through a **Pull Request (PR)**.  
 
+### AWS Infrastructure
+Terraform is used to provision the required AWS resources. Sensitive information is stored in terraform.tfvars, which is ignored by Git.
+
 ### Pull Request Actions  
 When a PR is created, GitHub Actions will automatically:  
 - Run **automated tests** (`test_app.py`)  

@@ -48,13 +48,13 @@ resource "aws_security_group" "stock_quote_sg" {
 # EC2 Instance
 resource "aws_instance" "stock_quote_ec2" {
   ami                    = var.aws_ami
-  instance_type          = "t4g.micro"
+  instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.stock_quote_sg.id]
   key_name               = var.key_name
 
   root_block_device {
-    volume_size           = 8
-    volume_type           = "gp2"
+    volume_size           = 15
+    volume_type           = "gp3"
     delete_on_termination = true
   }
 
