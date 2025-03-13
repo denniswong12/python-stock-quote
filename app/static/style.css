@@ -1,6 +1,5 @@
 /* style.css */
 
-/* Style the body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -8,12 +7,10 @@ body {
     padding: 20px;
 }
 
-/* Style for the form */
 form {
     margin-bottom: 20px;
 }
 
-/* Style for the input and button */
 input[type="text"] {
     padding: 10px;
     margin-right: 10px;
@@ -34,13 +31,11 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Styling for the error message */
 .error {
     color: red;
     font-weight: bold;
 }
 
-/* Style for headings */
 h2, h3 {
     color: #333;
 }
