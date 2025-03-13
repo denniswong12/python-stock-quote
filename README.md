@@ -1,4 +1,5 @@
 # Python Stock Quote  
+![GHA-CICD](https://github.com/user-attachments/assets/92e720cf-b336-4b34-9d35-e5c2e6109a50)
 
 This repository contains the source code for a simple **stock quote application** with a web interface, built using Python.  
 
