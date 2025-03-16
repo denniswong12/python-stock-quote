@@ -12,7 +12,7 @@ resource "aws_security_group" "stock_quote_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # SSH - Allow from anywhere (consider restricting)
+    cidr_blocks = [var.allowed_ssh_ips] # SSH
   }
 
   ingress {
@@ -48,13 +48,13 @@ resource "aws_security_group" "stock_quote_sg" {
 # EC2 Instance
 resource "aws_instance" "stock_quote_ec2" {
   ami                    = var.aws_ami
-  instance_type          = "t4g.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.stock_quote_sg.id]
   key_name               = var.key_name
 
   root_block_device {
-    volume_size           = 8
-    volume_type           = "gp2"
+    volume_size           = 15
+    volume_type           = "gp3"
     delete_on_termination = true
   }
 
