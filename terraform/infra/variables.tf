@@ -15,3 +15,7 @@ variable "vpc_id" {
   type        = string
 }
 
+variable "allowed_ssh_ips" {
+  description = "The IPs allowed for port 22"
+  type        = string
+}
