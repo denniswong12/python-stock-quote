@@ -22,10 +22,10 @@ resource "datadog_monitor" "low_memory_alert" {
   name = "Low Memory Alert"
   type = "metric alert"
 
-  query = "avg(last_5m):avg:system.mem.free{*} < 200000000"
+  query = "avg(last_5m):avg:system.mem.free{*} < 150000000"
 
   message = <<EOT
-🚨 ALERT: Available memory is below 200MB!
+🚨 ALERT: Available memory is below 150MB!
 
 @slack-${var.slack_channel}
 EOT
