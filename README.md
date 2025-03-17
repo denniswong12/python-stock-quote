@@ -52,12 +52,12 @@ Datadog monitors track system performance and application health, ensuring early
 ### **Datadog Dashboard**  
 The dashboard provides a centralized, real-time view of key system resource utilization and the status of configured monitors.
 
-<img width="1439" alt="dashboard-OK" src="https://github.com/user-attachments/assets/5b517a98-69cf-4086-9d44-27ce50b32d10" />
+<img width="1439" alt="dashboard-OK" src="https://github.com/user-attachments/assets/a540cfb4-8ab2-4df1-b4cc-84cc6f40a8c1" />
 
 ### **Alert Notifications**  
 When a Datadog monitor detects a breach of defined thresholds, an alert is triggered and displayed on the dashboard, providing immediate visual feedback.
 
-<img width="1439" alt="dashboard-alert" src="https://github.com/user-attachments/assets/fa88edca-fde6-4b79-9ee3-5f74a1942c3d" />
+<img width="1439" alt="dashboard-alert" src="https://github.com/user-attachments/assets/57d928b5-ad92-44bb-824e-dfac0d040dfa" />
 
 &nbsp;
 
