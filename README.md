@@ -2,7 +2,7 @@
 
 This repository contains GitHub Actions workflows for the CI/CD of a simple stock quote application with a Python-based web interface. Terraform provisions an EC2 instance, sets up a Datadog dashboard, and configures monitors with alerts sent to a Slack channel for proactive incident management.  
 
-🚀 **Live Demo:** [Stock Quote Application](http://3.9.99.74/)  
+🚀 **Live Demo:** [Stock Quote Application](https://demo.camtech.solutions)  
 
 ---
 
