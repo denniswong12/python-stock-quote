@@ -6,6 +6,26 @@
     <title>Stock Quote</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+<script>
+    function acceptCookies(choice) {
+        localStorage.setItem("cookieConsent", choice);
+        document.getElementById("cookie-banner").style.display = "none";
+
+        if (choice === "all") {
+            console.log("All cookies accepted.");
+        } else if (choice === "essential") {
+            console.log("Only essential cookies accepted.");
+        } else {
+            console.log("All cookies rejected.");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("cookieConsent")) {
+            document.getElementById("cookie-banner").style.display = "flex";
+        }
+    });
+</script>
 <body>
     <h2>Stock Quote App</h2>
     <form method="POST">
@@ -23,5 +43,13 @@
     {% if error %}
     <p class="error">{{ error }}</p>  <!-- Add error class for styling -->
     {% endif %}
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>We use cookies to enhance your experience. You can accept all cookies, only essential cookies, or reject all. <a href="/privacy-policy">Learn more</a>.</p>
+        <button onclick="acceptCookies('all')">Accept All</button>
+        <button onclick="acceptCookies('essential')">Essential Only</button>
+        <button onclick="acceptCookies('none')">Reject All</button>
+    </div>
+
 </body>
 </html>
