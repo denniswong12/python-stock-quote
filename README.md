@@ -12,7 +12,7 @@ The `main` branch is protected, requiring all code changes to go through a **Pul
 
 When a PR is created, GitHub Actions will automatically:  
 - Run **automated tests** (`test_app.py`).  
-- Perform a **SonarQube scan** using a self-hosted **SonarQube server on EC2**.  
+- Perform a **SonarQube scan** using a self-hosted **SonarQube server on EC2**. (Updated on 3 July 2025: SonarQube server has been stopped and the GHA will not perform SonarQube scan) 
 
 ### **Deployment Workflow**  
 
