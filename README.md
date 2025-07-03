@@ -2,8 +2,6 @@
 
 This repository contains GitHub Actions workflows for the CI/CD of a simple stock quote application with a Python-based web interface. Terraform provisions an EC2 instance, sets up a Datadog dashboard, and configures monitors with alerts sent to a Slack channel for proactive incident management.  
 
-🚀 **Live Demo:** [Stock Quote Application](https://demo.camtech.solutions)  
-
 ---
 
 ## **Development Workflow**  
@@ -14,7 +12,7 @@ The `main` branch is protected, requiring all code changes to go through a **Pul
 
 When a PR is created, GitHub Actions will automatically:  
 - Run **automated tests** (`test_app.py`).  
-- Perform a **SonarQube scan** using a self-hosted **SonarQube server on EC2**.  
+- Perform a **SonarQube scan** using a self-hosted **SonarQube server on EC2**. (Updated on 3 July 2025: SonarQube server has been stopped and the GHA will not perform SonarQube scan) 
 
 ### **Deployment Workflow**  
 

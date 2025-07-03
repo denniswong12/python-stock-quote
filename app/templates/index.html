@@ -8,21 +8,25 @@
 </head>
 <script>
     function acceptCookies(choice) {
-        localStorage.setItem("cookieConsent", choice);
-        document.getElementById("cookie-banner").style.display = "none";
+        const expirationDays = 1; // Show the banner again after 1 day
+        const expirationTime = new Date().getTime() + expirationDays * 24 * 60 * 60 * 1000;
 
-        if (choice === "all") {
-            console.log("All cookies accepted.");
-        } else if (choice === "essential") {
-            console.log("Only essential cookies accepted.");
-        } else {
-            console.log("All cookies rejected.");
-        }
+        localStorage.setItem("cookieConsent", choice);
+        localStorage.setItem("cookieExpiration", expirationTime);
+
+        document.getElementById("cookie-banner").style.display = "none";
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        if (!localStorage.getItem("cookieConsent")) {
+        const cookieConsent = localStorage.getItem("cookieConsent");
+        const cookieExpiration = localStorage.getItem("cookieExpiration");
+        const currentTime = new Date().getTime();
+
+        // If no consent is set, or if it has expired, show the banner
+        if (!cookieConsent || (cookieExpiration && currentTime > cookieExpiration)) {
             document.getElementById("cookie-banner").style.display = "flex";
+        } else {
+            document.getElementById("cookie-banner").style.display = "none";
         }
     });
 </script>
@@ -45,7 +49,7 @@
     {% endif %}
 
     <div id="cookie-banner" class="cookie-banner">
-        <p>We use cookies to enhance your experience. You can accept all cookies, only essential cookies, or reject all. <a href="/privacy-policy">Learn more</a>.</p>
+        <p>We use cookies to enhance your experience. You can accept all cookies, only essential cookies, or reject all.</p>
         <button onclick="acceptCookies('all')">Accept All</button>
         <button onclick="acceptCookies('essential')">Essential Only</button>
         <button onclick="acceptCookies('none')">Reject All</button>

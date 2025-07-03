@@ -20,8 +20,8 @@ def index():
                     "currency": stock.info.get("currency", "N/A"),
                     "previous_close": stock.info.get("regularMarketPreviousClose", "N/A")
                 }
-            except Exception as e:
-                error = f"Error fetching data: {e}"
+            except Exception:
+                error = "Unable to retrieve stock data. Please check the stock symbol and try again."
 
     return render_template("index.html", stock_data=stock_data, error=error)
 
